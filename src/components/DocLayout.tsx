@@ -109,7 +109,7 @@ export function DocLayout() {
             className="fixed inset-0 top-14 z-20 bg-background/80 backdrop-blur-sm md:hidden"
             onClick={() => setSidebarOpen(false)}
           >
-            <aside className="fixed left-0 top-14 z-30 h-[calc(100vh-3.5rem)] w-64 shrink-0 border-r border-border bg-background p-6">
+            <aside className="fixed left-0 top-14 z-30 h-[calc(100vh-3.5rem)] w-[80vw] max-w-64 shrink-0 border-r border-border bg-background p-6">
               <DocSidebar />
             </aside>
           </div>
