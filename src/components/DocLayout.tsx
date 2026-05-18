@@ -94,11 +94,7 @@ export function DocLayout() {
       </header>
 
       <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-        <aside
-          className={`fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block ${
-            sidebarOpen ? "block" : "hidden"
-          } md:block`}
-        >
+        <aside className="hidden h-[calc(100vh-3.5rem)] shrink-0 md:sticky md:top-14 md:block">
           <div className="h-full py-6 pr-6 lg:py-8">
             <DocSidebar />
           </div>
@@ -109,7 +105,10 @@ export function DocLayout() {
             className="fixed inset-0 top-14 z-20 bg-background/80 backdrop-blur-sm md:hidden"
             onClick={() => setSidebarOpen(false)}
           >
-            <aside className="fixed left-0 top-14 z-30 h-[calc(100vh-3.5rem)] w-[80vw] max-w-64 shrink-0 border-r border-border bg-background p-6">
+            <aside
+              className="fixed left-0 top-14 z-30 h-[calc(100vh-3.5rem)] w-[80vw] max-w-64 shrink-0 border-r border-border bg-background p-6"
+              onClick={(event) => event.stopPropagation()}
+            >
               <DocSidebar />
             </aside>
           </div>
